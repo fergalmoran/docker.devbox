@@ -23,8 +23,8 @@ RUN apt-get install -y mercurial \
 
 # Setup home environment
 RUN useradd dev
+RUN gpasswd -a dev sudo
 RUN mkdir /home/dev && chown -R dev: /home/dev
-RUN mkdir -p /home/dev/go /home/dev/bin /home/dev/lib /home/dev/include
 ENV PATH /home/dev/bin:$PATH
 ENV HOME /home/dev
 ENV HOMESRC ${HOME}/src/
