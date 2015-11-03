@@ -23,6 +23,7 @@ RUN apt-get install -y mercurial \
 
 # Setup home environment
 RUN useradd dev
+RUN echo "dev:dev" | chpasswd
 RUN gpasswd -a dev sudo
 RUN mkdir /home/dev && chown -R dev: /home/dev
 ENV PATH /home/dev/bin:$PATH
