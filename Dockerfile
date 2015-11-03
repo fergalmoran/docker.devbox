@@ -62,7 +62,7 @@ RUN printf 'y' | vim +BundleInstall +qall \
 #Set up bash
 RUN git clone https://github.com/fergalmoran/dotfiles.git ${HOME}/dotfiles\
     && cd ${HOME}/dotfiles \
-    && ./instalL
+    && ./install
 
 # Create a shared data volume
 # We need to create an empty file, otherwise the volume will
