@@ -5,6 +5,7 @@ RUN apt-get install -y mercurial \
     git \
     python \
     curl \
+    mongodb \
     vim \
     vim-nox \
     vim-scripts \
@@ -30,6 +31,11 @@ ENV PATH /home/dev/bin:$PATH
 ENV HOME /home/dev
 ENV HOMESRC ${HOME}/src/
 ENV HOMEBIN ${HOME}/bin/
+
+RUN locale-gen en_IE.UTF-8  
+ENV LANG en_IE.UTF-8  
+ENV LANGUAGE en_IE:en  
+ENV LC_ALL en_IE.UTF-8 
 
 RUN mkdir -p ${HOMESRC} && \
     mkdir -p ${HOMEBIN}
